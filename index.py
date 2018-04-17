@@ -21,4 +21,14 @@ def join(itemSet1, itemSet2):
     itemSet3 = itemSet3 + itemSet2
     return(itemSet3)
 
-print(need_join("dfdf", "dfdf"))
+def get_sup(item, p_index, h):
+    if item in h:
+        return h[item]
+    inverted_list = []
+    for term in item:
+        inverted_list.append(p_index[term])
+    sup = len(inverted_list)/500
+    h[item] = sup
+    return sup
+
+print(join("dfdf", "dfdf"))
